@@ -1,0 +1,37 @@
+{
+  "name": "chart-the-stock-market",
+  "version": "1.0.0",
+  "description": "Full-stack application that displays real-time stock charts.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielknguyen/chart-the-stock-market.git"
+  },
+  "keywords": [
+    "html5",
+    "css3",
+    "javascript",
+    "jquery",
+    "node.js",
+    "express.js",
+    "mongoDb"
+  ],
+  "author": "Daniel Nguyen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danielknguyen/chart-the-stock-market/issues"
+  },
+  "homepage": "https://github.com/danielknguyen/chart-the-stock-market#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "consolidate": "^0.15.1",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "morgan": "^1.9.0",
+    "nunjucks": "^3.1.2"
+  }
+}
