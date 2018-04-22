@@ -3,7 +3,8 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     engines = require('consolidate'),
     app = express(),
-    morgan = require('morgan');
+    morgan = require('morgan'),
+    yahooFinance = require('yahoo-finance');
 
 var appConfig = function() {
   app.use(express.static(__dirname + '/public'));
@@ -13,8 +14,9 @@ var appConfig = function() {
   app.use(bodyParser.json());
   app.use(morgan('dev'));
 }();
-
-var routes = require('./routes/routes.js')(app);
+// var db = require('./libs/db.js');
+var Stock = require('./models/stockSchema.js');
+var routes = require('./routes/routes.js')(app, yahooFinance, Stock);
 var port = process.env.PORT || 27017;
 var server = app.listen(port, function() {
   console.log("Express server is listening on port %s.", port);
