@@ -1,0 +1,57 @@
+#stock-container {
+  padding: 25px 15px;
+  margin: 15px 75px;
+  background-color: #BFBFBF;
+}
+.stock-div {
+  margin: 10px 0;
+}
+.stocks {
+  border: 2px solid #f1f1f1;
+  border-left: 7px solid #f1f1f1;
+  background-color: #FFFFFF;
+  margin: 1px 0;
+  height: 195px;
+}
+.stocks:hover {
+  border: 2px solid red;
+  border-left: 7px solid red;
+}
+#copyright {
+  text-align: center;
+}
+#stocksFormDiv {
+  border: 2px solid green;
+  border-left: 7px solid green;
+}
+#addStocksForm {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+input[name=stocksInput] {
+  letter-spacing: 3px;
+}
+.stocks-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.stocks-description {
+  color: grey;
+  letter-spacing: 1px;
+}
+#chartContainer {
+  height: 400px;
+}
+#myChart {
+  height: 400px;
+  width: 100%;
+}
+.stocks-symbols-links:link, .stocks-symbols-links:visited, .stocks-symbols-links:hover, .stocks-symbols-links:active {
+  color: #000000;
+  text-decoration: none;
+}
