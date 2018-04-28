@@ -33,9 +33,6 @@
   cursor: pointer;
 }
 #addStocksForm {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
 }
 input[name=stocksInput] {
   letter-spacing: 3px;
