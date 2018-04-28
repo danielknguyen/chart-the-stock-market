@@ -10,21 +10,17 @@
       <div id="myChart"></div>
     </div>
     <div class="stock-div container-fluid">
-      <div class="row">
+      <div id="stock-row" class="row">
         {% for stock in stocks %}
-          <div class="stocks col-xs-12 col-sm-6 col-md-4 col-lg-4">
-            <p class="stocks-title">
-              <a href="/stocks/delete/{{ stock.symbol }}" class="stocks-symbols-links">
-                {{ stock.symbol }}
-              </a>
-            </p>
-          </div>
+          <button id="{{ stock.symbol }}" val="{{ stock.symbol }}" class="stocks col-xs-12 col-sm-6 col-md-4 col-lg-4">
+            <p class="stocks-title">{{ stock.symbol }}</p>
+          </button>
         {% endfor %}
       </div>
     </div>
-    <div id="stocksFormDiv" class="stocks col-xs-12 col-sm-6 col-md-4 col-lg-4">
-      <form id="addStocksForm" action="/stocks/add" method="POST">
-          <input type="text" class="form-control" name="stocksInput" value="" placeholder="stock code">
+    <div id="stocksFormDiv" class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+      <form id="addStocksForm">
+          <input id="stockInput" type="text" class="form-control" name="stocksInput" value="" placeholder="stock code">
           <button id="addStockBtn" type="submit" class="btn btn-primary" style="width: 100%">Add</button>
       </form>
     </div>
