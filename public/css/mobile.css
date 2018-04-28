@@ -2,4 +2,7 @@
   #stock-container {
     margin: 5px;
   }
+  #myChart {
+    border: 1px solid black;
+  }
 }

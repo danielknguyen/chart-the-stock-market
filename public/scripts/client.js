@@ -18,7 +18,7 @@ $(document).ready(function() {
   $('.stocks').on('click', function() {
     var input =  $(this).find('p');
     var stock = input[0].innerHTML;
-    // console.log(stock);
+    console.log(stock);
     socket.emit('deleteStock', stock);
   });
 
@@ -30,7 +30,7 @@ $(document).ready(function() {
     $('#stock-row').append(html);
     stockSymbols.push(data.symbol);
     // console.log('this is the stock symbol array, ' + stockSymbols);
-    highCharts();
+    location.reload();
   });
 
   socket.on('deleteStock', function(data) {
@@ -41,7 +41,7 @@ $(document).ready(function() {
         return symbol;
       };
     });
-    highCharts();
+    location.reload();
   });
 
   // console.log('this is the stock symbols ', stockSymbols);
