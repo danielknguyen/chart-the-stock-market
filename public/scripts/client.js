@@ -30,7 +30,7 @@ $(document).ready(function() {
     $('#stock-row').append(html);
     stockSymbols.push(data.symbol);
     // console.log('this is the stock symbol array, ' + stockSymbols);
-    location.reload();
+    $('#stockInput').val('');
   });
 
   socket.on('deleteStock', function(data) {
@@ -41,7 +41,7 @@ $(document).ready(function() {
         return symbol;
       };
     });
-    location.reload();
+    $('#stockInput').val('');
   });
 
   // console.log('this is the stock symbols ', stockSymbols);
