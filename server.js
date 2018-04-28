@@ -4,7 +4,7 @@ var express = require('express'),
     engines = require('consolidate'),
     app = express(),
     morgan = require('morgan'),
-    yahooFinance = require('yahoo-finance');
+    yahooFinance = require('yahoo-finance'),
     socket = require('socket.io');
 
 var appConfig = function() {

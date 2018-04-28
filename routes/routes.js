@@ -39,7 +39,7 @@ var routes = function(app, yahooFinance, Stock, io, socket) {
             }
             // if stock does not exist reject data
             if (!stock || stock.length === 0) {
-              console.log('stock does exist');
+              console.log("stock doesn't exist");
               reject(stock);
             } else {
               // else if stock exists accept data
