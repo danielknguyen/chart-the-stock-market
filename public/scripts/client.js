@@ -10,7 +10,7 @@ $(document).ready(function() {
   };
 
   $('#addStockBtn').on('click', function() {
-    var stockInputVal = $('#stockInput').val();
+    var stockInputVal = $('#stockInput').val().toUpperCase();
     socket.emit('addStock', stockInputVal);
   });
 

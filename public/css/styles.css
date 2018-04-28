@@ -56,3 +56,10 @@ input[name=stocksInput] {
   height: 400px;
   width: 100%;
 }
+/* .error_msg {
+  display: none;
+  color: red;
+}
+.show {
+  display: block;
+} */
