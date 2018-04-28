@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  var socket = io.connect('http://localhost:27017');
+  var socket = io.connect('https://watch-stocks.herokuapp.com');
 
   var stockSymbols = [];
 
