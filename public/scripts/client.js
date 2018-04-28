@@ -1,13 +1,52 @@
 $(document).ready(function() {
 
+  var socket = io.connect('http://localhost:27017');
+
   var stockSymbols = [];
+
   var s = document.getElementsByClassName("stocks-title");
   for (var i = 0; i < s.length; i++) {
-    stockSymbols.push(s[i].innerHTML);
+    stockSymbols.push(s[i].innerText);
   };
-  // console.log(stockSymbols);
 
-  $(function () {
+  $('#addStockBtn').on('click', function() {
+    var stockInputVal = $('#stockInput').val();
+    socket.emit('addStock', stockInputVal);
+  });
+
+  // select stock element div
+  $('.stocks').on('click', function() {
+    var input =  $(this).find('p');
+    var stock = input[0].innerHTML;
+    // console.log(stock);
+    socket.emit('deleteStock', stock);
+  });
+
+  socket.on('addStock', function(data) {
+    console.log('Stock added ', data.symbol);
+    var html = '<button id="' + data.symbol + '" val="' + data.symbol + '" class="stocks col-xs-12 col-sm-6 col-md-4 col-lg-4"> \
+      <p class="stocks-title">' + data.symbol + '</p> \
+    </button>';
+    $('#stock-row').append(html);
+    stockSymbols.push(data.symbol);
+    // console.log('this is the stock symbol array, ' + stockSymbols);
+    highCharts();
+  });
+
+  socket.on('deleteStock', function(data) {
+    console.log('symbol deleted ', data);
+    $('#' + data).remove();
+    stockSymbols.filter(function(symbol) {
+      if (symbol !== data) {
+        return symbol;
+      };
+    });
+    highCharts();
+  });
+
+  // console.log('this is the stock symbols ', stockSymbols);
+  var highCharts = function () {
+    // console.log('high charts ran');
     // render graph if stocks exists
     if (stockSymbols.length !== 0) {
       $.ajax({
@@ -28,6 +67,7 @@ $(document).ready(function() {
             };
             s.name = stock;
             s.data = price;
+            s.lineWidth = 3;
             series.push(s);
           };
           // console.log(series);
@@ -57,6 +97,8 @@ $(document).ready(function() {
         }
       })
     };
-  });
-  
+  };
+
+  highCharts();
+
 });
