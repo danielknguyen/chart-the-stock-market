@@ -50,7 +50,7 @@ $(document).ready(function() {
     // render graph if stocks exists
     if (stockSymbols.length !== 0) {
       $.ajax({
-        url: "http://localhost:27017/stocks/data",
+        url: "https://watch-stocks.herokuapp.com/stocks/data",
         type: "GET",
         success: function(data) {
           // console.log(data);
