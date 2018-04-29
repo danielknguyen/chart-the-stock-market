@@ -42,8 +42,7 @@ $(document).ready(function() {
         return symbol;
       };
     });
-    $('#stockInput').val('');
-    highCharts();
+    location.reload();
   });
 
   // console.log('this is the stock symbols ', stockSymbols);
