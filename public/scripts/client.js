@@ -30,8 +30,7 @@ $(document).ready(function() {
     $('#stock-row').append(html);
     stockSymbols.push(data.symbol);
     // console.log('this is the stock symbol array, ' + stockSymbols);
-    $('#stockInput').val('');
-    highCharts();
+    location.reload();
   });
 
   socket.on('deleteStock', function(data) {
