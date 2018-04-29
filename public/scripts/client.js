@@ -31,6 +31,7 @@ $(document).ready(function() {
     stockSymbols.push(data.symbol);
     // console.log('this is the stock symbol array, ' + stockSymbols);
     $('#stockInput').val('');
+    highCharts();
   });
 
   socket.on('deleteStock', function(data) {
@@ -42,6 +43,7 @@ $(document).ready(function() {
       };
     });
     $('#stockInput').val('');
+    highCharts();
   });
 
   // console.log('this is the stock symbols ', stockSymbols);
